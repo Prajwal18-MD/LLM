@@ -35,6 +35,10 @@ summarizer  = pipeline("summarization", model="facebook/bart-large-cnn")
 
 # ——— Endpoints ———
 
+@app.get("/")
+async def home():
+    return {"message": "Personalized LLM API is running 🚀"}
+
 @app.post("/translate")
 async def translate(payload: dict):
     """
